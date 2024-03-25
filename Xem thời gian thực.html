@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    body{
+    Background-color:plum;
+}
+     .clock {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3em;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            background-color: #4e54c8; 
+            padding: 20px 30px; 
+            border-radius: 50px; /* Round corners for clock */
+            box-shadow: 0 25px 15px rgba(0, 0, 0, 0.4); 
+            border: 10px solid black;
+             animation: explode 2s ease-in-out; /* Add explosion animation */ 
+               
+               @keyframes explode {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        
+        }
+</style>
+<meta charset="utf-8">
+    <title>Website theo dõi thời gian thực</title>
+    <link rel="stylesheet" type="text/css" href="Styles.css">
+</head>
+<body>
+    <div class="heart-shape top-left"></div>
+    <div class="heart-shape top-right"></div>
+     <div class="clock" id="clock"></div>
+    <div class="heart-shape bottom-left"></div>
+    <div class="heart-shape bottom-right"></div>
+    
+    
+    <script>
+        function updateClock() {
+            var now = new Date();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var seconds = now.getSeconds();
+            hours = hours < 10 ? '0' + hours : hours;
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+            var timeString = hours + ':' + minutes + ':' + seconds;
+            document.getElementById('clock').textContent = timeString;
+        }
+
+
+        setInterval(updateClock, 1000);
+        updateClock(); // display the clock time
+    </script>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Social Icon Popup </title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+</head>
+</body>
+</html>

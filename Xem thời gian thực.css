@@ -1,0 +1,73 @@
+.heart-shape {
+   position: absolute;
+   width: 70px;
+   height: 70px;
+   background-color: rgb(211, 38, 26);
+   transform: rotate(45deg);
+   animation-name:along;
+   animation-iteration-count:infinite;
+   animation-duration:2s ;
+}
+@keyframes along{
+    0%{
+        transform: scale(0.1);
+    }
+    100%{
+        transform: scale(0.5);
+    }
+}
+.heart-shape::before,
+.heart-shape::after {
+   content: '';
+   position: absolute;
+   width: 100px;
+   height: 100px;
+   border-radius: 50%;
+   background-color: rgb(211, 39, 27);
+   animation-name:change;
+   animation-iteration-count:infinite;
+   animation-duration:2s ;
+}
+
+.heart-shape::before {
+   bottom: 0;
+   left: -50px;
+}
+
+.heart-shape::after {
+   top: -50px;
+   right: -50px;
+   
+}
+@keyframes change{
+   0%{
+       transform: scale(1);
+   }
+   100%{
+       transform: scale(1.2);
+   }
+}
+
+
+
+
+
+.top-left {
+   top: 0;
+   left: 0;
+}
+
+.top-right {
+   top: 0;
+   right: 0;
+}
+
+.bottom-left {
+   bottom: 0;
+   left: 0;
+}
+
+.bottom-right {
+   bottom: 0;
+   right: 0;
+}
